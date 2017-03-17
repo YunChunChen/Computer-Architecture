@@ -1,2 +1,2 @@
 # Computer-Architecture
-This repository contains some codes and materials of the computer architecture course
+This repository contains some code implementations and materials of the computer architecture course.
