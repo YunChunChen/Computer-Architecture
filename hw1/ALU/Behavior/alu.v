@@ -1,9 +1,11 @@
 /****************************************************************************************************
-  
-[Language]    Verilog.
+
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Engineering, National Taiwan University
+[Language]    Verilog
 [Function]    An 8-bit arithmetic logic unit module.
 [Description] This is a simple implementation of the 8-bit alu using event-driven construct,
-              always block. 
+              "always block". 
 [Port]         ctrl : A 4-bit control signal.
                   x : An 8-bit input signal ranging from -128 to 127.
                   y : An 8-bit input signal ranging from -128 to 127.

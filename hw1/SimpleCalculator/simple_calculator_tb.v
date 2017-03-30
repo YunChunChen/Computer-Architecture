@@ -1,6 +1,8 @@
 /**********************************************************************************************
 
-[Language]    Verilog.
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Engineering, National Taiwan University
+[Language]    Verilog
 [Function]    This is the test bench of the simple_calculator.v module.
 [Description] The test bench will feed some meaningful test vectors intp simple calculator
               and verify the result from busY automatically.

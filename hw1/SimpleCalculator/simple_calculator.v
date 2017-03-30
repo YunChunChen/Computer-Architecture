@@ -1,6 +1,8 @@
 /**************************************************************************************************
 
-[Language]    Verilog.
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Engineering, National Taiwan University
+[Language]    Verilog
 [Function]    This is the module of a simple calculator.
 [Description] This module combines the alu module and the register file module to realize a 
               simple calculator unit. For the implementation details of the alu module and 

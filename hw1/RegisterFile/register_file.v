@@ -1,6 +1,8 @@
 /***************************************************************************************************
 
-[Language]    Verilog.
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Engineering, National Taiwan University
+[Language]    Verilog
 [Function]    This is a 8x8 register file.
 [Description] A register file consists of a set of registers which can be read or written. There 
               are 8 registers in the register file, and the width of the register is 8 bits.  

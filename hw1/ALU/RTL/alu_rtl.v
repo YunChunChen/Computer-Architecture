@@ -1,6 +1,8 @@
 /*****************************************************************************************************
 
-[Language]    Verilog.
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Engineering, National Taiwan University
+[Language]    Verilog
 [Function]    An 8-bit arithmetic logic unit module.
 [Description] This is a simple implementation of the 8-bit alu using continuous assignment, "assign".
 [Port]         ctrl : A 4-bit control signal.

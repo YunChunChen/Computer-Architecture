@@ -1,5 +1,7 @@
 /***************************************************************************************************
 
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Enginnering, National Taiwan University
 [Language]    Verilog.
 [Function]    This is the test bench of the alu_rtl.v module.
 [Description] There are 16 functions to be verified. In order to verify them simultaneously, I

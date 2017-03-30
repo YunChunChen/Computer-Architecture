@@ -1,6 +1,8 @@
 /*******************************************************************************************************
 
-[Language]    Verilog.
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Engineering, National Taiwan University
+[Language]    Verilog
 [Function]    This is the test bench of the alu.v module.
 [Description] There are 16 functions to be verified. In order to verify them simultaneously, I
               declare 16 different objects of the alu.v module, and each one focus on one operation 

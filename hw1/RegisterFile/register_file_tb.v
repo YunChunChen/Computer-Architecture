@@ -1,6 +1,8 @@
 /***************************************************************************************************
 
-[Language]    Verilog.
+[Author]      Yun-Chun (Johnny) Chen
+[Affiliation] Department of Electrical Engineering, National Taiwan University
+[Language]    Verilog
 [Function]    This is the test bench of the register_file.v module.
 [Description] 1. This test bench will automatically generate random test patterns to verify
                  the implementation of the register file. 

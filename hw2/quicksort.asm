@@ -1,6 +1,15 @@
-# Quick sort in assembly code
-
-       .text
+# [Author]      Yun-Chun (Johnny) Chen
+# [Affiliation] Department of Electrical Engineering, National Taiwan University
+# [Language]    Assembly code
+# [Function]    Perform quick sort algorithm
+# [Description] This code performs quick sort algorithm that takes in any number of inputs.
+#               To launch this program, users are adviced to install QtSpim compiler since
+#               the code is written under MIPS environment.
+# [Usage]       When the program is launched, the console will prompt with a message that              
+#               user has to enter the number of inputs in the very beginning. Later on,
+#               enter the numbers sequentially. However, each input number needs to be separated
+#               by an "enter" or a "return" key. Space key is not supported by QtSpim compiler.
+#               The result will be printed afterwards.
 
        .globl main
 main: 
