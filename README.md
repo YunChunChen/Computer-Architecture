@@ -9,16 +9,15 @@ The programming language will mainly focus on verilog. However, assembly code an
 
 **[Language]**    Verilog.
 
-**[Function]**    
-                  1. We design an arithmetic logic unit (ALU) with two kinds of implementation, behavior level and RTL level.  
-                          Test bench is provided.
+**[Function]**    1. We design an arithmetic logic unit (ALU) with two kinds of implementation, behavior level and RTL level.  
+                     Test bench is provided.
 
-                  2. We design a register file that realizes the write and read function with write enable control. Test bench is 
-                 provided.
+                  2. We design a register file that realizes the write and read function with write enable control. Test bench 
+                     is provided.
               
                   3. We design a simple calculator based on the previously designed arithmetic logic unit and register file. 
-                     However, to act more like a real calculator, we incorporate a multiplexer into our design, which enables us 
-                     to write data into the calculator. Test bench is provided.
+                     However, to act more like a real calculator, we incorporate a multiplexer into our design, which enables 
+                     us to write data into the calculator. Test bench is provided.
 
 
 
