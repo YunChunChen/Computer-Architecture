@@ -10,6 +10,8 @@ The programming language will mainly focus on verilog. However, assembly code an
               2. We design a register file that realizes the write and read function with write enable control. Test bench is provided.
               3. We design a simple calculator based on the previously designed arithmetic logic unit and register file. However, to act more like a real calculator, we incorporate a multiplexer into our design, which enables us to write data into the calculator. Test bench is provided.
 
+
+
 <HW2>
 [Description] Homework 2 aims at a deeper insight of how assembly code operates.
 [Language]    Assembly code.
