@@ -27,6 +27,11 @@ The programming language will mainly focus on `verilog`. However, `assembly code
 
 
 
+
+
+
+
+
 ### **\<HW2\>**
 
 **[Description]** 
@@ -44,4 +49,7 @@ The programming language will mainly focus on `verilog`. However, `assembly code
     assembly code. However, the constraint is that the compiling environment we select is MIPS compiler. 
 
 
-Any suggestions or bugs found are welcomed.
+
+
+
+## Any suggestions or bugs found are welcomed.
