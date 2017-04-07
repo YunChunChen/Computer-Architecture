@@ -1,4 +1,4 @@
-# Computer-Architecture
+# Computer Architecture
 ## This repository contains some code implementations and materials of the computer architecture course.
 
 The programming language will mainly focus on `verilog`. However, `assembly code` and `C++` are also included in the homework assignment.
