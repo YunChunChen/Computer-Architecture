@@ -17,3 +17,34 @@
 <img height="800" src=http://i.imgur.com/Ba9jFe1.png />
 <br>
 
+
+# ALU control design.
+
+<br>
+<img height="600" src=http://i.imgur.com/HFztXES.png />
+<br>
+
+
+# ALU signal.
+
+<br>
+<img height="600" src=http://i.imgur.com/2te4elI.png />
+<br>
+
+<br>
+<img height="500" src=http://i.imgur.com/UGY6z1W.png />
+<br>
+
+
+# Truth table of ALU
+
+<br>
+<img height="500" src=http://i.imgur.com/AMSowE7.png />
+<br>
+
+
+# Control signal
+
+<br>
+<img height="600" src=http://i.imgur.com/Rjx93L8.png />
+<br>
