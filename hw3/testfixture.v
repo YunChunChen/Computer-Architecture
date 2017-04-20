@@ -227,9 +227,9 @@ endmodule
 //  ------------------------------------------------------ 
 /*
     // Contents of initial data memory
-    // addr	     decimal
-    //    0           15
-    //    1           20
+    // addr       decimal
+    //    0            15
+    //    1            20
 
     // Contents of instruction memory
     // Note: test IR address at every cycle
