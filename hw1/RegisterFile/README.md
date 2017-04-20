@@ -1,4 +1,4 @@
-The architecture of the register file.
+# The architecture of the register file.
 
 
 <br>
