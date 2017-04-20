@@ -3,7 +3,7 @@
 # [Language]    Assembly code
 # [Function]    Perform quick sort algorithm
 # [Description] This code performs quick sort algorithm that takes in any number of inputs.
-#               To launch this program, users are adviced to install QtSpim compiler since
+#               To launch this program, users are advised to install QtSpim compiler since
 #               the code is written under MIPS environment.
 # [Usage]       When the program is launched, the console will prompt with a message that              
 #               user has to enter the number of inputs in the very beginning. Later on,
@@ -158,7 +158,6 @@ return:
        addi  $sp, $sp, 28     # increment $sp(stack pointer) by 20
        jr    $ra              # return to the address stored in $ra
 
-
 result:
        # print results
        li    $v0, 4
@@ -185,7 +184,7 @@ output:
 
        bne   $s3, $s0, output # if $s3(counting index) != $s0(number of inputs), print integer  
 
-	li    $v0, 10 	  # termination   
+       li    $v0, 10          # termination   
        syscall
 
        .data

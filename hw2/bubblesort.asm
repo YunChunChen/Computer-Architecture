@@ -3,8 +3,8 @@
 # [Language]    Assembly code
 # [Function]    Perform bubble sort algorithm
 # [Description] This code performs bubble sort algorithm which takes in any number of inputs.
-#               To launch this program, users are adviced to install QtSpim compiler since 
-#               the code in written under MIPS environment.
+#               To launch this program, users are advised to install QtSpim compiler since 
+#               the code is written under MIPS environment.
 # [Usage]       When the program is launched, the console will prompt with a message that
 #               user has to enter the number of inputs in the very beginning. Later on,
 #               enter the numbers sequentially. However, each input number needs to be separated
@@ -131,7 +131,7 @@ output:
        la    $a0, msg5        # new line
        syscall
 
-	li    $v0, 10 	      # termination   
+	   li    $v0, 10          # termination   
        syscall
 
        .data
