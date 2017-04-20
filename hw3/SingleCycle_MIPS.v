@@ -1,11 +1,10 @@
-/**************************************************************************************************
+/*******************************************************************************************************
 
 [Author]      Yun-Chun (Johnny) Chen
 [Affiliation] Department of Electrical Engineering, National Taiwan University
 [Language]    Verilog
 [Function]    Single Cycle MIPS
-[Description] This is the module of a single cycle MIPS. The supported instructions are
-              listed in below.
+[Description] This is the module of a single cycle MIPS. The supported instructions are listed in below.
 [Instruction] add, sub, and, or, slt
               lw, sw
               beq
@@ -17,13 +16,13 @@
               WEN: write enable, 0 when you write data into SRAM, 1 when you read data from SRAM.
               OEN: output enable, always 0 in this case,
               Q: data outputs.
-[Note]        clock: Positive edge triggered.
-              reset: Active low asynchronous reset.
+[Note]        clock: positive edge triggered.
+              reset: active low asynchronous reset.
               memory: The data memory is isolated and defined in other file.
               register file: 1. All registers are reset to 0 when reset occurs.
                              2. Register $0 must always be 0.
 
-***************************************************************************************************/
+********************************************************************************************************/
 
 
 // Single Cycle MIPS
@@ -342,6 +341,7 @@ module SingleCycle_MIPS( clk, rst_n, IR_addr, IR, RF_writedata, ReadDataMem, CEN
     //==== sequential part ====================================
     always @(posedge clk) begin
         
+        // initialize the register and IR_addr
         if (rst_n == 1'b0) begin
             for (i = 0 ; i < 32 ; i = i + 1)
                 register[i] <= 32'b0;
@@ -349,16 +349,13 @@ module SingleCycle_MIPS( clk, rst_n, IR_addr, IR, RF_writedata, ReadDataMem, CEN
         end
         
         else begin 
-        
             // get the instruction address
             IR_addr <= ProgramCounterNext;
-        
             // write into register
             if (RegWrite == 1'b1) begin
                 if (WriteRegister != 1'b0) // register[0] should always be 0
                     register[WriteRegister] <= WriteData;
             end
-        
             // store the program counter of next instruction into register[31] $ra
             if (jal == 1'b1) register[31] <= ProgramCounter4;
         end
