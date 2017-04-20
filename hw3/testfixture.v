@@ -225,60 +225,60 @@ module ROM128x32 ( addr, data );
 endmodule
 
 //  ------------------------------------------------------ 
-/*	
-	// Contents of initial data memory
-	// addr		decimal
-	// 0		15
-	// 1 		20
-	
-	// Contents of instruction memory	
-	// Note: test IR address at every cycle
+/*
+    // Contents of initial data memory
+    // addr	     decimal
+    //    0          15
+    //    1          20
+
+    // Contents of instruction memory
+    // Note: test IR address at every cycle
 
     lw $t0, 0($zero)        # $t0 = 15
     lw $t1, 1($zero)        # $t1 = 20
 		
-	#test add
-	add $t0, $t0, $t0       # $t0 = 30
-			 
-	#test sub
-	sub $t2, $t0, $t1       # $t2 = 10
-	  
-	#test and
-	and $t3, $t0, $t1       # $t3 = 20
-	  
-	# test beq
-	beq $t0, $t2, beq_dest  # not taken , test IR_addr	  
-	  
-	#test or
-	or $t4, $t0, $t1        # $t4 = 30
-	  
-	#test slt
-	slt $t5, $t3, $t4       # $t5 = 1
+    #test add
+    add $t0, $t0, $t0       # $t0 = 30
+		 
+    #test sub
+    sub $t2, $t0, $t1       # $t2 = 10
+  
+    #test and
+    and $t3, $t0, $t1       # $t3 = 20
+  
+    # test beq
+    beq $t0, $t2, beq_dest  # not taken , test IR_addr	  
+  
+    #test or
+    or $t4, $t0, $t1        # $t4 = 30
+  
+    #test slt
+    slt $t5, $t3, $t4       # $t5 = 1
 
-	#test sw
-	sw $t4, 4($zero) 
-	lw $s1, 4($zero)        # $s1 = 30
-	
-	#test j
-	j JumpRegister          # test IR addr
-	
+    #test sw
+    sw $t4, 4($zero) 
+    lw $s1, 4($zero)        # $s1 = 30
+
+    #test j
+    j JumpRegister          # test IR addr
+
     #Jal_dest: 
-	add $s2, $t3, $t3       # $s2 = 40
-	jr $ra		            # test IR_addr
-		
-	#test jr  
+    add $s2, $t3, $t3       # $s2 = 40
+    jr $ra		            # test IR_addr
+
+    #test jr  
     #JumpRegister: 
-	add $s3, $t3, $t3       # $s3 = 40 --> jump correct
-	
-	#test jal
-	jal Jal_dest            # test IR_addr and RF_writedata
-	beq $s2, $s3, beq_dest  # taken, test IR_addr
-	
-	add $s2, $s1, $s0       # will not be executed
-	add $s3, $s1, $s0       # will not be executed
-	
+    add $s3, $t3, $t3       # $s3 = 40 --> jump correct
+
+    #test jal
+    jal Jal_dest            # test IR_addr and RF_writedata
+    beq $s2, $s3, beq_dest  # taken, test IR_addr
+
+    add $s2, $s1, $s0       # will not be executed
+    add $s3, $s1, $s0       # will not be executed
+
     #beq_dest:	
-	add $s4, $s3, $s2       # $s4 = 80
+    add $s4, $s3, $s2       # $s4 = 80
 
     exit: 
 
