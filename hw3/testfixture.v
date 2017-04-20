@@ -250,7 +250,7 @@ endmodule
 	beq $t0, $t2, beq_dest  # not taken , test IR_addr	  
 	  
 	#test or
-	or $t4, $t0, $t1	    # $t4 = 30
+	or $t4, $t0, $t1        # $t4 = 30
 	  
 	#test slt
 	slt $t5, $t3, $t4       # $t5 = 1
