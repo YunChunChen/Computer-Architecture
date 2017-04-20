@@ -90,13 +90,13 @@ module register_file_tb;
                     $display("error2 QQ!!! %b , %d\n",busX,counter);
                 end
             end
-			else if (counter<24) begin
+            else if (counter<24) begin
                 RX  <= 0;
                 RY  <= counter[2:0];
                 RW  <= counter[2:0];
                 WEN <= 0;
                 busW<= 0;
-				if (counter==17 && busY!==8'd0) begin
+                if (counter==17 && busY!==8'd0) begin
                     error_num = error_num + 1;
                     $display("error3 QQ!!! %b , %d\n",busY,counter);
                 end
