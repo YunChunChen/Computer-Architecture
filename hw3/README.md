@@ -5,9 +5,9 @@
 <br>
 
 
-# The control signal table.
+# The architecture of the memory.
 
 <br>
-<img height="800" src=http://i.imgur.com/h7UzDJk.png />
+<img height="800" src=http://i.imgur.com/Ba9jFe1.png />
 <br>
 
