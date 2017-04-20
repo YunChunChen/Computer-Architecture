@@ -18,11 +18,11 @@
 
 module alu( ctrl, x, y, carry, out);
     
-    input  [3:0] ctrl;
-    input  [7:0] x;
-    input  [7:0] y;
-    output reg   carry;
+    input      [3:0] ctrl;
+    input      [7:0] x;
+    input      [7:0] y;
     output reg [7:0] out;
+    output reg       carry;
 
     // x and y should lie within 127 and -128 
     always@(x or y or ctrl) begin
