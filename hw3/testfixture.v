@@ -228,8 +228,8 @@ endmodule
 /*
     // Contents of initial data memory
     // addr	     decimal
-    //    0          15
-    //    1          20
+    //    0           15
+    //    1           20
 
     // Contents of instruction memory
     // Note: test IR address at every cycle
@@ -264,7 +264,7 @@ endmodule
 
     #Jal_dest: 
     add $s2, $t3, $t3       # $s2 = 40
-    jr $ra		            # test IR_addr
+    jr $ra                  # test IR_addr
 
     #test jr  
     #JumpRegister: 
