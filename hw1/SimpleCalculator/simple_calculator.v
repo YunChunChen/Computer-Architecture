@@ -1,4 +1,4 @@
-/**************************************************************************************************
+/*****************************************************************************************************
 
 [Author]      Yun-Chun (Johnny) Chen
 [Affiliation] Department of Electrical Engineering, National Taiwan University
@@ -10,54 +10,50 @@
               directory.
 [Port]        Sel : When Sel = 0, DataIn is passed to port x of ALU.
                     When Sel = 1, the data loaded to port x of ALU is from the register file.
-              Other port declaration details, please refer to the alu.v module and register_file.v
+              Other port's declaration details, please refer to the alu.v module and register_file.v
               module.
 
-****************************************************************************************************/
+******************************************************************************************************/
 
 module register_file( Clk, WEN, RW, busW, RX, RY, busX, busY);
-    input           Clk, WEN;
+    input            Clk, WEN;
     input      [2:0] RW, RX, RY;
     input      [7:0] busW;
     output reg [7:0] busX, busY;
     
     reg        [7:0] register [7:0]; // 8 registers to be written 
 
-    initial begin
-    register[0] = 8'd0;
-    register[1] = 8'd0;
-    register[2] = 8'd0;
-    register[3] = 8'd0;
-    register[4] = 8'd0;
-    register[5] = 8'd0;
-    register[6] = 8'd0;
-    register[7] = 8'd0;
+    always@(*) begin
+        register[0] = 8'd0;
+        register[1] = 8'd0;
+        register[2] = 8'd0;
+        register[3] = 8'd0;
+        register[4] = 8'd0;
+        register[5] = 8'd0;
+        register[6] = 8'd0;
+        register[7] = 8'd0;
     end
 
-    // write your design here
     always@(posedge Clk) begin
- 	if (WEN && RW != 0)
+ 	    if (WEN && RW != 0)
     	    register[RW] <= busW;
     end
 
     always@(RX, register[0], register[1], register[2], register[3], register[4], register[5], register[6], register[7]) begin
-        busX = register[RX];
+        busX <= register[RX];
     end
 
     always@(RY, register[0], register[1], register[2], register[3], register[4], register[5], register[6], register[7]) begin
-        busY = register[RY];
+        busY <= register[RY];
     end
 endmodule
-// end the module of register_file
 
-
-// the module of alu
 module alu( ctrl, x, y, carry, out);
     input      [3:0] ctrl;
     input      [7:0] x;
     input      [7:0] y;
-    output reg       carry;
     output reg [7:0] out;
+    output reg       carry;
 
     // x and y should lie within 127 and -128 
     always@(x or y or ctrl) begin
@@ -79,10 +75,7 @@ module alu( ctrl, x, y, carry, out);
         else if (ctrl == 4'b1111) out = 0;
     end 	
 endmodule
-// end the module of alu
 
-
-// module of multiplexer
 module Mux( out, in1, in2, sel);
     output reg [7:0] out;
     input      [7:0] in1; // DataIn
@@ -90,35 +83,29 @@ module Mux( out, in1, in2, sel);
     input            sel;
  
     always@(in1, in2) begin
-        if (sel) out = in2;
-        else     out = in1;
+        if (sel) out <= in2;
+        else     out <= in1;
     end   
 endmodule
-// end module of multiplexer
 
-
-// the module of simple_calculator
 module simple_calculator( Clk, WEN, RW, RX, RY, DataIn, Sel, Ctrl, busY, Carry);
-    input        Clk;
-    input        WEN;
-    input  [2:0] RW, RX, RY;
-    input  [7:0] DataIn;
-    input        Sel;
-    input  [3:0] Ctrl;
-    output [7:0] busY;
-    output       Carry;
+    input         Clk;
+    input         WEN;
+    input   [2:0] RW, RX, RY;
+    input   [7:0] DataIn;
+    input         Sel;
+    input   [3:0] Ctrl;
+    output  [7:0] busY;
+    output        Carry;
 
-// declaration of wire/reg
     wire    [7:0] busX;           // register_file's busX
     wire    [7:0] ALUOutput;      // ALU's out and register's input
     wire    [7:0] MuxOutput;      // mux's output and alu's input	
     reg     [7:0] register [7:0]; // 8 registers to be written
 
 
-// submodule instantiation
     register_file _regFile ( .Clk(Clk), .WEN(WEN), .RW(RW), .busW(ALUOutput), .RX(RX), .RY(RY), .busX(busX), .busY(busY)); 
     alu           _alu ( .ctrl(Ctrl), .x(MuxOutput), .y(busY), .carry(Carry), .out(ALUOutput));    
     Mux           _mux ( .out(MuxOutput), .in1(DataIn), .in2(busX), .sel(Sel));	
     	
 endmodule
-// end the module of simple_calculator

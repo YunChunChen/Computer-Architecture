@@ -5,7 +5,7 @@
 [Language]    Verilog
 [Function]    This is the test bench of the alu.v module.
 [Description] There are 16 functions to be verified. In order to verify them simultaneously, I
-              declare 16 different objects of the alu module, and each one focuses on one operation 
+              declare 16 different objects of the alu, and each one focuses on one operation 
               individually at one time.
 [Note]        To avoid overflow issue, the input range of x and y should lie within -128 and 127 since
               x and y are 8-bit signed inputs. If the range of the input dissatisfied users' requirement,
@@ -105,19 +105,15 @@ module alu_tb;
     alu alu15( .ctrl(ctrl15), .x(x15), .y(y15), .carry(carry1), .out(out15));
     alu alu16( .ctrl(ctrl16), .x(x16), .y(y16), .carry(carry2), .out(out16));
 
-
-   initial begin
-       $dumpfile("alu.vcd");
-       $dumpvars;
-//        $fsdbDumpfile("alu.fsdb");
-//        $fsdbDumpvars;
-   end
+    initial begin
+        $dumpfile("alu.vcd");
+        $dumpvars;
+    end
 
     initial begin
         x1    = 8'b1111_1111;
         y1    = 8'b1111_1111;
         
- 
         #(`CYCLE);
         // 0100 boolean not
         ctrl1 = 4'b0100;
@@ -132,7 +128,6 @@ module alu_tb;
     initial begin
         x2    = 8'b1111_1111;
         y2    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0010 boolean and
@@ -150,7 +145,6 @@ module alu_tb;
         x3    = 8'b1111_1111;
         y3    = 8'b1111_1111;
    
- 
         #(`CYCLE);
         // 0011 boolean or
         ctrl3 = 4'b0011;
@@ -166,7 +160,6 @@ module alu_tb;
     initial begin
         x4    = 8'b1111_1111;
         y4    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0101 boolean xor
@@ -183,7 +176,6 @@ module alu_tb;
     initial begin
         x5    = 8'b1111_1111;
         y5    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0110 boolean nor
@@ -200,7 +192,6 @@ module alu_tb;
     initial begin
         x6    = 8'b1111_1111;
         y6    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0111 shift left logical variable
@@ -217,7 +208,6 @@ module alu_tb;
     initial begin
         x7    = 8'b1111_1111;
         y7    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1000 shift right logical variable
@@ -234,7 +224,6 @@ module alu_tb;
     initial begin
         x8    = 8'b1111_1111;
         y8    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1001 shift right arithmetic
@@ -252,7 +241,6 @@ module alu_tb;
         x9    = 8'b1111_1111;
         y9    = 8'b1111_1111;
    
- 
         #(`CYCLE);
         // 1010 rotate left
         ctrl9 = 4'b1010;
@@ -269,7 +257,6 @@ module alu_tb;
         x10    = 8'b1111_1111;
         y10    = 8'b1111_1111;
    
- 
         #(`CYCLE);
         // 1011 rotate right
         ctrl10 = 4'b1011;
@@ -285,7 +272,6 @@ module alu_tb;
     initial begin
         x11    = 8'b1111_1111;
         y11    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1100 equal
@@ -302,7 +288,6 @@ module alu_tb;
     initial begin
         x12    = 8'b1111_1111;
         y12    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1101 no operation
@@ -320,7 +305,6 @@ module alu_tb;
         x13    = 8'b1111_1111;
         y13    = 8'b1111_1111;
    
- 
         #(`CYCLE);
         // 1110 no operation
         ctrl13 = 4'b1110;
@@ -336,7 +320,6 @@ module alu_tb;
     initial begin
         x14    = 8'b1111_1111;
         y14    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1111 no operation
@@ -381,5 +364,4 @@ module alu_tb;
         // finish tb
         #(`CYCLE) $finish;
     end
-
 endmodule

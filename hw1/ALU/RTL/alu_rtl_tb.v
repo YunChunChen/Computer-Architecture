@@ -5,10 +5,10 @@
 [Language]    Verilog
 [Function]    This is the test bench of the alu_rtl.v module.
 [Description] There are 16 functions to be verified. In order to verify them simultaneously, I
-              declare 16 different objects of the alu_rtl.v module, and each one focuses on 
+              declare 16 different objects of the alu_rtl, and each one focuses on 
               one operation individually at one time.
 [Note]        To avoid overflow issue, the input range of x and y should lie within -128 and 
-              127, since x and y are 8-bit signed inputs. If the range of the input dissatisfied
+              127 since x and y are 8-bit signed inputs. If the range of the input dissatisfied
               user's requirement, users are then suggested to modify the alu_rtl.v file and
               customize to their satisfaction.
 
@@ -106,19 +106,15 @@ module alu_rtl_tb;
     alu_rtl alu15( .ctrl(ctrl15), .x(x15), .y(y15), .carry(carry1), .out(out15));
     alu_rtl alu16( .ctrl(ctrl16), .x(x16), .y(y16), .carry(carry2), .out(out16));
 
-
-   initial begin
-       $dumpfile("alu_rtl.vcd");
-       $dumpvars;
-//        $fsdbDumpfile("alu_rtl.fsdb");
-//        $fsdbDumpvars;
-   end
+    initial begin
+        $dumpfile("alu_rtl.vcd");
+        $dumpvars;
+    end
 
     initial begin
         x1    = 8'b1111_1111;
         y1    = 8'b1111_1111;
         
- 
         #(`CYCLE);
         // 0100 boolean not
         ctrl1 = 4'b0100;
@@ -126,6 +122,7 @@ module alu_rtl_tb;
         #(`HCYCLE);
         if( out1 == 8'b0000_0000 ) $display( "PASS --- 0100 boolean not" );
         else $display( "FAIL --- 0100 boolean not" );
+
         // finish tb
         #(`CYCLE) $finish;
     end
@@ -149,7 +146,6 @@ module alu_rtl_tb;
     initial begin
         x3    = 8'b1111_1111;
         y3    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0011 boolean or
@@ -166,7 +162,6 @@ module alu_rtl_tb;
     initial begin
         x4    = 8'b1111_1111;
         y4    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0101 boolean xor
@@ -183,7 +178,6 @@ module alu_rtl_tb;
     initial begin
         x5    = 8'b1111_1111;
         y5    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0110 boolean nor
@@ -200,7 +194,6 @@ module alu_rtl_tb;
     initial begin
         x6    = 8'b1111_1111;
         y6    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 0111 shift left logical variable
@@ -217,7 +210,6 @@ module alu_rtl_tb;
     initial begin
         x7    = 8'b1111_1111;
         y7    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1000 shift right logical variable
@@ -235,7 +227,6 @@ module alu_rtl_tb;
         x8    = 8'b1111_1111;
         y8    = 8'b1111_1111;
    
- 
         #(`CYCLE);
         // 1001 shift right arithmetic
         ctrl8 = 4'b1001;
@@ -251,7 +242,6 @@ module alu_rtl_tb;
     initial begin
         x9    = 8'b1111_1111;
         y9    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1010 rotate left
@@ -268,7 +258,6 @@ module alu_rtl_tb;
     initial begin
         x10    = 8'b1111_1111;
         y10    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1011 rotate right
@@ -285,7 +274,6 @@ module alu_rtl_tb;
     initial begin
         x11    = 8'b1111_1111;
         y11    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1100 equal
@@ -303,7 +291,6 @@ module alu_rtl_tb;
         x12    = 8'b1111_1111;
         y12    = 8'b1111_1111;
    
- 
         #(`CYCLE);
         // 1101 no operation
         ctrl12 = 4'b1101;
@@ -319,7 +306,6 @@ module alu_rtl_tb;
     initial begin
         x13    = 8'b1111_1111;
         y13    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1110 no operation
@@ -336,7 +322,6 @@ module alu_rtl_tb;
     initial begin
         x14    = 8'b1111_1111;
         y14    = 8'b1111_1111;
-   
  
         #(`CYCLE);
         // 1111 no operation
@@ -353,6 +338,7 @@ module alu_rtl_tb;
     initial begin
         x15    = 8'b1111_1111;
         y15    = 8'b1111_1111;
+
         #(`CYCLE);
         // 0000 ADD
         ctrl15 = 4'b0000;
@@ -376,8 +362,7 @@ module alu_rtl_tb;
         #(`HCYCLE);
         if( (out16 == 8'b1111_1110) && (carry2 == 1) ) $display( "PASS --- 0001 sub" );
         else $display( "FAIL --- 0001 sub" );
-	// finish tb
+    	// finish tb
         #(`CYCLE) $finish;
     end
-
 endmodule

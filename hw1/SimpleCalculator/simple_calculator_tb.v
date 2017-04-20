@@ -1,10 +1,9 @@
 /**********************************************************************************************
 
-[Author]      Yun-Chun (Johnny) Chen
 [Affiliation] Department of Electrical Engineering, National Taiwan University
 [Language]    Verilog
 [Function]    This is the test bench of the simple_calculator.v module.
-[Description] The test bench will feed some meaningful test vectors intp simple calculator
+[Description] The test bench will feed some meaningful test vectors into simple calculator
               and verify the result from busY automatically.
 
 **********************************************************************************************/
@@ -31,8 +30,6 @@ module simple_calculator_tb;
     initial begin
         $dumpfile("simple_calc.vcd");
         $dumpvars;
-        // $fsdbDumpfile("simple_calc.fsdb");
-        // $fsdbDumpvars;
     end
 
     // clock generation
@@ -300,7 +297,6 @@ module simple_calculator_tb;
         end
         $display( "Calculation results: %2d * %2d = %4d", A, B, busY );
         #(`HCYCLE)
-        
         
         // show total results
         if( err_count==0 ) begin

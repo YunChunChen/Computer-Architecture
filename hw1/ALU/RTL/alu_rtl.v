@@ -22,7 +22,6 @@ module alu_rtl( ctrl, x, y, carry, out);
     input  [7:0] y;
     output       carry;
     output [7:0] out;
-   
  
     // x and y should lie with 127 to -128	
     assign {carry, out} = (ctrl == 4'b0000) ? {x[7], x} + {y[7], y}:	
