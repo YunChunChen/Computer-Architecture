@@ -1,4 +1,4 @@
-/*********************************************************************************************
+/**************************************************************************************************
 
 [Affiliation] Department of Electrical Engineering, National Taiwan University
 [Language]    Verilog
@@ -10,7 +10,7 @@
               defined in SingleCycle_MIPS.v. For the instruction sequences used in the 
               testbench, please refer to the end of this file. 
 
-*********************************************************************************************/
+**************************************************************************************************/
 
 `timescale 1 ns/10 ps
 `define CYCLE 10
@@ -31,8 +31,8 @@ module SingleCycle_tb;
     wire [31:0] ReadData2;
     wire        OEN;
 
-	integer     error_cnt;
-	integer     i;
+    integer     error_cnt;
+    integer     i;
 
     // Instruction memory
     ROM128x32 i_rom( .addr(IR_addr[8:2]), .data(IR) );
@@ -232,54 +232,55 @@ endmodule
 	// 1 		20
 	
 	// Contents of instruction memory	
-	// Note: test IR address at every cycle	
+	// Note: test IR address at every cycle
     //
-    lw $t0, 0($zero)		# $t0 = 15
-    lw $t1, 1($zero)		# $t1 = 20
+    lw $t0, 0($zero)        # $t0 = 15
+    lw $t1, 1($zero)        # $t1 = 20
 		
 	#test add
-	add $t0, $t0, $t0	# $t0 = 30
+	add $t0, $t0, $t0       # $t0 = 30
 			 
 	#test sub
-	sub $t2, $t0, $t1 # $t2 = 10
+	sub $t2, $t0, $t1       # $t2 = 10
 	  
 	#test and
-	and $t3, $t0, $t1  # $t3 = 20
+	and $t3, $t0, $t1       # $t3 = 20
 	  
 	# test beq
-	beq $t0, $t2, beq_dest # not taken , test IR_addr	  
+	beq $t0, $t2, beq_dest  # not taken , test IR_addr	  
 	  
 	#test or
-	or $t4, $t0, $t1	# $t4 = 30
+	or $t4, $t0, $t1	    # $t4 = 30
 	  
 	#test slt
-	slt $t5, $t3, $t4 # $t5 = 1
+	slt $t5, $t3, $t4       # $t5 = 1
 
 	#test sw
 	sw $t4, 4($zero) 
-	lw $s1, 4($zero)  # $s1 = 30
+	lw $s1, 4($zero)        # $s1 = 30
 	
 	#test j
-	j JumpRegister # test IR addr
+	j JumpRegister          # test IR addr
 	
     #Jal_dest: 
-	add $s2, $t3, $t3 # $s2 = 40
-	jr $ra		# test IR_addr
+	add $s2, $t3, $t3       # $s2 = 40
+	jr $ra		            # test IR_addr
 		
 	#test jr  
     #JumpRegister: 
-	add $s3, $t3, $t3  # $s3 = 40 --> jump correct
+	add $s3, $t3, $t3       # $s3 = 40 --> jump correct
 	
 	#test jal
-	jal Jal_dest  # test IR_addr and RF_writedata
-	beq $s2, $s3, beq_dest # taken, test IR_addr
+	jal Jal_dest            # test IR_addr and RF_writedata
+	beq $s2, $s3, beq_dest  # taken, test IR_addr
 	
-	add $s2, $s1, $s0 # will not be executed
-	add $s3, $s1, $s0 # will not be executed
+	add $s2, $s1, $s0       # will not be executed
+	add $s3, $s1, $s0       # will not be executed
 	
     #beq_dest:	
-	add $s4, $s3, $s2 # $s4 = 80
-exit: 
+	add $s4, $s3, $s2       # $s4 = 80
+
+    exit: 
 
 */
 //  ------------------------------------------------------ 

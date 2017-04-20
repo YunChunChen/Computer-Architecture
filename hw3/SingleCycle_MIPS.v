@@ -337,10 +337,8 @@ module SingleCycle_MIPS( clk, rst_n, IR_addr, IR, RF_writedata, ReadDataMem, CEN
         else                                        ProgramCounterNext = ProgramCounter4;
     end
 
-
     //==== sequential part ====================================
     always @(posedge clk) begin
-        
         // initialize the register and IR_addr
         if (rst_n == 1'b0) begin
             for (i = 0 ; i < 32 ; i = i + 1)
