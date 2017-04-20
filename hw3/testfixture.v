@@ -233,7 +233,7 @@ endmodule
 	
 	// Contents of instruction memory	
 	// Note: test IR address at every cycle
-    //
+
     lw $t0, 0($zero)        # $t0 = 15
     lw $t1, 1($zero)        # $t1 = 20
 		
