@@ -7,10 +7,11 @@
 [Description] This is a simple implementation of the 8-bit alu using event-driven construct,
               "always block". 
 [Port]         ctrl : A 4-bit control signal.
-                  x : An 8-bit input signal ranging from -128 to 127.
-                  y : An 8-bit input signal ranging from -128 to 127.
+                  x : An 8-bit input signal ranging from -128 to 127 (2's complement).
+                  y : An 8-bit input signal ranging from -128 to 127 (2's complement).
               carry : Carry is the most significant bit of the results of addition and subtraction.
-                      Other operations on x or y, carry will be a don't care term. 
+                      Other operations perform on either x or y, carry will be considered as a 
+                      don't care term.
                 out : An 8-bit output that stores the results of the operation.
               
 *****************************************************************************************************/

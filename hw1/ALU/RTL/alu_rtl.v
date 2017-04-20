@@ -9,7 +9,8 @@
                   x : An 8-bit input ranging from -128 to 127.
                   y : An 8-bit input ranging from -128 to 127.
               carry : Carry is the most significant bit of the results of addition and subtraction.
-                      Other operations on x or y, carry will be a don't care term.
+                      Other operations perform on either x or y, carry will be considered as a 
+                      don't care term.
                 out : An 8-bit output that stores the results of the operation. 
                 
 ******************************************************************************************************/

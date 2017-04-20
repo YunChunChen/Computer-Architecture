@@ -5,11 +5,11 @@
 [Language]    Verilog
 [Function]    This is the test bench of the alu.v module.
 [Description] There are 16 functions to be verified. In order to verify them simultaneously, I
-              declare 16 different objects of the alu.v module, and each one focus on one operation 
-              at one time.
-[Note]        To avoid overflow issue, the input range of x and y should lie within -128 and 127, since
-              x and y are 8-bit signed inputs. If the range of the input dissatisfred users' requirement,
-              users are then suggested to modify the alu.v module and customize to their satisfaction. 
+              declare 16 different objects of the alu module, and each one focuses on one operation 
+              individually at one time.
+[Note]        To avoid overflow issue, the input range of x and y should lie within -128 and 127 since
+              x and y are 8-bit signed inputs. If the range of the input dissatisfied users' requirement,
+              users are then suggested to modify the alu.v file and customize to their satisfaction. 
 
 ********************************************************************************************************/
 
