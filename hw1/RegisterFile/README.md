@@ -2,5 +2,5 @@
 
 
 <br>
-<img height="400" src=http://i.imgur.com/DgNFPGM.png />
+<img height="600" src=http://i.imgur.com/DgNFPGM.png />
 <br>
