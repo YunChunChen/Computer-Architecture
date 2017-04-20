@@ -6,8 +6,8 @@ The programming language will mainly focus on `verilog`. However, `assembly code
 ### **\<HW1\>**
 
 **[Description]** 
-    
-    Homework 1 aims at getting familiar with verilog and implementing some simple functions.
+    
+```    Homework 1 aims at getting familiar with verilog and implementing some simple functions. ```
 
 **[Language]**    
     
@@ -44,9 +44,12 @@ The programming language will mainly focus on `verilog`. However, `assembly code
 
 **[Function]**    
 
-
     I implement the bubble sort algorithm and quick sort algorithm that can take in any number of inputs with 
     assembly code. However, the constraint is that the compiling environment is under QtSpim compiler. 
+
+
+
+
 
 
 
@@ -61,7 +64,6 @@ The programming language will mainly focus on `verilog`. However, `assembly code
     Verilog.
 
 **[Function]**    
-
 
     I implement the single cycle MIPS with verilog. For more details, please refer to the hw3 folder.
 
