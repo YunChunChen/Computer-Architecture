@@ -131,7 +131,7 @@ output:
        la    $a0, msg5        # new line
        syscall
 
-	   li    $v0, 10          # termination   
+       li    $v0, 10          # termination   
        syscall
 
        .data
