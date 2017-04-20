@@ -23,7 +23,7 @@ module register_file( Clk, WEN, RW, busW, RX, RY, busX, busY);
     
     reg        [7:0] register [7:0]; // 8 registers to be written 
 
-    always@(*) begin
+    initial begin
         register[0] = 8'd0;
         register[1] = 8'd0;
         register[2] = 8'd0;
