@@ -1,7 +1,7 @@
 # The architecture of the ALU.
 
 <br>
-<img height="600" src=http://i.imgur.com/Bd2np6t.png />
+<img height="600" src=http://i.imgur.com/x1rZJ3o.jpg />
 <br>
 
 
