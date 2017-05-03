@@ -12,12 +12,16 @@ using namespace std;
 #define max 200
 
 void quicksort(L1cache*, int, int, int*);
-void swap(L1cache*, int*, int*,int, int, int*);
+void swap(L1cache*, int*, int*, int, int, int*);
 
 int main() {
     int cal_numbers = 0;
     int error_counter = 0;
-    int way_number = 8; //direct map: 1, 2-way: 2, 4-way: 4, fully associative: 8
+    int way_number = 8; // direct map: way_number = 1
+                        // 2-way: way_number = 2
+                        // 4-way: way_number = 4
+                        // fully associative: way_number = 8
+    
     int orig_list[max] = {8,171,145,34,98,91,42,52,157,172,45,195,
                           77,143,104,122,183,155,81,141,196,162,71,
                           24,197,161,148,119,151,131,188,72,166,109,
@@ -45,45 +49,46 @@ int main() {
 
     for (i = 0 ; i < n ; i++) {   
         data[i%4] = orig_list[i];
-        if (i%4==3)
+        if (i % 4 == 3)
             mem.writetoMem(i/4,data);
     }
     int data_print;
     printf("\nBefore Sorting: \n");
-    for (i = 0; i < n; i++) {
+    for (i = 0 ; i < n ; i++) {
         data_print = cache.getfromCache(i);
         printf("%d ", data_print);
         if (data_print != orig_list[i]) {
-            cout << "Error occurs at address " << i << " original data " << orig_list[i] << " your data " << data_print << " not equal" << endl;
-            error_counter ++ ;
+            cout << "Error occurs at address " << i << " original data " << orig_list[i];
+            cout << " your data " << data_print << " not equal" << endl;
+            error_counter++ ;
         }
     }
 
-    printf("\n\n");
-    quicksort(&cache, 0, n - 1, &cal_numbers);
-    sort(orig_list,orig_list+max);
+    quicksort(&cache, 0, n-1, &cal_numbers);
+    sort(orig_list, orig_list+max);
 
     printf("\nAfter Sorting: \n");
     for (i = 0 ; i < n ; i++) {
         data_print = cache.getfromCache(i);
         printf("%d ", data_print);
         if (data_print != orig_list[i]){
-            cout << "Error occurs at address " << i << " original data " << orig_list[i] << " your data " << data_print << " not equal" << endl;
-            error_counter ++ ;
+            cout << "Error occurs at address " << i << " original data " << orig_list[i];
+            cout << " your data " << data_print << " not equal" << endl;
+            error_counter++ ;
         }
     }
 
     if (way_number == 1)
-        cout << endl << "way_number = 1 Direct map" << endl;
+        cout << endl << "way_number = 1, direct map" << endl;
     else if (way_number == 2)
-        cout << endl << "way_number = 2 2-way" << endl;
+        cout << endl << "way_number = 2, 2-way" << endl;
     else if (way_number == 4)
-        cout << endl << "way_number = 4 4-way" << endl;
+        cout << endl << "way_number = 4, 4-way" << endl;
     else 
-	    cout << endl << "way_number = 8 Fully associative" << endl;
+        cout << endl << "way_number = 8, fully associative" << endl;
 
     double rate = double(cache.getHit()) / double(cache.getHit() + cache.getMiss()) * 100;
-    cout << endl << "Hit rate: " << setprecision(4) << rate << "%" << endl << endl;
+    cout << endl << "Hit rate: " << setprecision(4) << rate << "%" << endl;
 
     if (error_counter == 0)
         cout << "Well done!! You have passed test bench 2!" << endl;
@@ -117,7 +122,7 @@ void quicksort(L1cache* cache, int left, int right, int* cal_numbers) {
         *cal_numbers = *cal_numbers + 2;
         while (i <= right && left_value <= pivot) {
             *cal_numbers = *cal_numbers + 4;
-            i = i + 1;
+            i++;
             *cal_numbers = *cal_numbers + 1;
             left_value = cache->getfromCache(i);
         }
@@ -125,7 +130,7 @@ void quicksort(L1cache* cache, int left, int right, int* cal_numbers) {
         *cal_numbers = *cal_numbers + 2;
         while (j > left && right_value > pivot) {
             *cal_numbers = *cal_numbers + 4;
-            j = j - 1;
+            j--;
             *cal_numbers = *cal_numbers + 1;
             right_value = cache->getfromCache(j);
         }

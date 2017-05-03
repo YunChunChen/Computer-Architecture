@@ -11,13 +11,17 @@ using namespace std;
 
 #define max 200
 
-void merge(L1cache*, int, int , int*); //merge two lists
-void mergeSort(L1cache*, int , int , int*);
+void merge(L1cache*, int, int, int*); //merge two lists
+void mergeSort(L1cache*, int, int, int*);
 
 int main() {
     int error_counter = 0; // error counter
     int cal_numbers = 0; // CPU calculate cycles
-    int way_number = 8; //direct map: 1, 2-way: 2, 4-way: 4, fully associative: 8
+    int way_number = 8; // direct map: way_number = 1 
+                        // 2-way: way_number = 2 
+                        // 4-way: way_number = 44 
+                        // fully associative: way_number = 8
+    
     int orig_list[max] = {8,171,145,34,98,91,42,52,157,172,45,195,77,143,104,122,
                           183,155,81,141,196,162,71,24,197,161,148,119,151,131,188,
                           72,166,109,35,48,60,189,90,138,73,50,74,125,105,88,120,
@@ -49,36 +53,37 @@ int main() {
         data_print = cache.getfromCache(i);
         printf("%d ", data_print);
         if (data_print != orig_list[i]) {
-            cout << "Error occurs at address " << i << " original data " << orig_list[i] << " your data " << data_print <<" not equal" << endl;
+            cout << "Error occurs at address " << i << " original data " << orig_list[i];
+            cout << " your data " << data_print <<" not equal" << endl;
             error_counter ++ ;
         }
     }
 
-    printf("\n\n");
-    mergeSort(&cache, 0, n -1,&cal_numbers);
-    sort(orig_list,orig_list+max);
+    mergeSort(&cache, 0, n-1, &cal_numbers);
+    sort(orig_list, orig_list+max);
 
-    printf("\nAfter Sorting: \n");
-    for (i = 0; i < n; i++) {
+    printf("\nAfter Sorting:\n");
+    for (i = 0 ; i < n ; i++) {
         data_print = cache.getfromCache(i);
         printf("%d ", data_print);
         if (data_print != orig_list[i]) {
-            cout << "Error occurs at address " << i << " original data " << orig_list[i] << " your data " << data_print <<" not equal" << endl;
-            error_counter ++ ;
+            cout << "Error occurs at address " << i << " original data " << orig_list[i];
+            cout << " your data " << data_print <<" not equal" << endl;
+            error_counter++ ;
          }
     }
 
     if (way_number == 1)
-        cout << endl << "way_number = 1 Direct map" << endl;
+        cout << endl << "way_number = 1, direct-mapped" << endl;
     else if (way_number == 2)
-        cout << endl << "way_number = 2 2-way" << endl;
+        cout << endl << "way_number = 2, 2-way" << endl;
     else if (way_number == 4)
-        cout << endl << "way_number = 4 4-way" << endl;
+        cout << endl << "way_number = 4, 4-way" << endl;
     else 
-	      cout << endl << "way_number = 8 Fully associative" << endl;
+        cout << endl << "way_number = 8, fully associative" << endl;
 
-    double rate = double(cache.getHit()) / double(cache.getHit()  +cache.getMiss()) * 100;
-    cout << endl << "Hit rate: " << setprecision(4) << rate << "%" << endl << endl;
+    double rate = double(cache.getHit()) / double(cache.getHit() + cache.getMiss()) * 100;
+    cout << endl << "Hit rate: " << setprecision(4) << rate << "%" << endl;
 
     if (error_counter == 0)
         cout << "Well done!! You have passed test bench 3!" << endl;
@@ -149,7 +154,6 @@ void merge(L1cache* cache, int left, int right, int* cal_numbers) {
     }
 }
 
-
 void mergeSort(L1cache* cache, int left, int right, int* cal_numbers) {
     int mid;
     if (left >= right)
@@ -161,5 +165,3 @@ void mergeSort(L1cache* cache, int left, int right, int* cal_numbers) {
     mergeSort(cache, mid+1, right, cal_numbers);
     merge(cache, left, right,cal_numbers);
 }
-
-

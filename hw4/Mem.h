@@ -6,13 +6,13 @@
 class Mem {
 
 private:
-	int mem[MEMsize][4];
+    int mem[MEMsize][4];
 
 public:
-	Mem ();
-	int* getfromMem(const int);
-	void writetoMem(const int,int*);
-	void printMem();
+    Mem ();
+    int* getfromMem(const int);
+    void writetoMem(const int, int*);
+    void printMem();
 };
 
 #endif
