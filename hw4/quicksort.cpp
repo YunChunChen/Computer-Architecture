@@ -11,10 +11,10 @@ using namespace std;
 
 #define max 200
 
-void quicksort(L1cache *, int, int, int *);
-void swap(L1cache *, int *, int *,int, int, int *);
+void quicksort(L1cache*, int, int, int*);
+void swap(L1cache*, int*, int*,int, int, int*);
 
-int main(void) {
+int main() {
     int cal_numbers = 0;
     int error_counter = 0;
     int way_number = 8; //direct map: 1, 2-way: 2, 4-way: 4, fully associative: 8
@@ -68,23 +68,21 @@ int main(void) {
         data_print = cache.getfromCache(i);
         printf("%d ", data_print);
         if (data_print != orig_list[i]){
-            cout << "Error occurs at address " << i << " original data " << orig_list[i] << " your data " << data_print <<" not equal" << endl;
+            cout << "Error occurs at address " << i << " original data " << orig_list[i] << " your data " << data_print << " not equal" << endl;
             error_counter ++ ;
         }
     }
 
-    cout << "\n\n";
-
     if (way_number == 1)
-        cout << "way_number = 1 Direct map" << endl;
+        cout << endl << "way_number = 1 Direct map" << endl;
     else if (way_number == 2)
-        cout << "way_number = 2 2-way" << endl;
+        cout << endl << "way_number = 2 2-way" << endl;
     else if (way_number == 4)
-        cout << "way_number = 4 4-way" << endl;
+        cout << endl << "way_number = 4 4-way" << endl;
     else 
-	    cout << "way_number = 8 Fully associative" << endl;
+	    cout << endl << "way_number = 8 Fully associative" << endl;
 
-    double rate = double(cache.getHit())/double(cache.getHit()+cache.getMiss())*100;
+    double rate = double(cache.getHit()) / double(cache.getHit() + cache.getMiss()) * 100;
     cout << endl << "Hit rate: " << setprecision(4) << rate << "%" << endl << endl;
 
     if (error_counter == 0)
@@ -96,7 +94,7 @@ int main(void) {
     cout << "Total miss: " << cache.getMiss() << endl;
 }
 
-void quicksort(L1cache *cache, int left, int right, int *cal_numbers) {
+void quicksort(L1cache* cache, int left, int right, int* cal_numbers) {
     int pivot, i, j;
 
     if (left >= right) { 
@@ -139,11 +137,11 @@ void quicksort(L1cache *cache, int left, int right, int *cal_numbers) {
 
     swap(cache, &left, &j, pivot, cache->getfromCache(j), cal_numbers);
 
-    quicksort(cache, left, j - 1,cal_numbers);
-    quicksort(cache, j + 1, right,cal_numbers);
+    quicksort(cache, left, j-1, cal_numbers);
+    quicksort(cache, j+1, right, cal_numbers);
 }
 
-void swap(L1cache *cache, int *a, int *b, int left_value, int right_value, int *cal_numbers) {
+void swap(L1cache* cache, int* a, int* b, int left_value, int right_value, int* cal_numbers) {
     cache->writetoCache(*a,right_value);
     cache->writetoCache(*b,left_value);
     *cal_numbers = *cal_numbers + 1;
