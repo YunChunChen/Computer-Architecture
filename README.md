@@ -11,8 +11,7 @@ The programming language will mainly focus on `verilog`. However, `assembly` and
 Homework 1 aims at getting familiar with verilog and implementing some simple functions. 
 ```
 
-**[Language]**    
-    
+**[Language]**     
 ```
 Verilog
 ```
