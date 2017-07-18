@@ -1,7 +1,7 @@
 # Computer Architecture
-## This repository contains some code implementations and materials of the computer architecture course.
+## This repository contains some code implementations and materials of the `computer architecture` course.
 
-The programming language will mainly focus on `verilog`. However, `assembly code` and `C++` are also included in the homework assignment.
+The programming language will mainly focus on `verilog`. However, `assembly` and `C++` are also included in the homework assignments.
 
 ### **\<HW1\>**
 
@@ -20,15 +20,15 @@ Verilog
 **[Function]**    
 
 ```
-1. Design an arithmetic logic unit (ALU) with two kinds of implementation, behavior level and 
-   RTL level. Test bench is provided. 
+1. Design an arithmetic logic unit (ALU) with two kinds of implementations, behavior level and 
+   RTL level. Test bench is provided.
                
-2. Design a register file that realizes the write and read function with write enable control.
-   Test bench. is provided.
+2. Design a register file that realizes the write and read function with a write enable control.
+   Test bench is provided.
                
 3. Design a simple calculator based on the previously designed arithmetic logic unit and 
-   register file. However, to act more like a real calculator, we incorporate a multiplexer
-   into our design, which enables us to write data into the calculator. Test bench is provided.
+   register file. However, to operate more like a real calculator, we incorporate a multiplexer
+   into our design which enables us to write data into the calculator. Test bench is provided.
 ```
 
 
@@ -50,7 +50,7 @@ Assembly
 
 ```
 I implement the bubble sort algorithm and quick sort algorithm that can take in any number of inputs with 
-assembly code. However, the constraint is that the compiling environment is under QtSpim compiler. 
+assembly. However, the constraint is that the compiling environment must be under the QtSpim compiler. 
 ```
 
 
@@ -90,7 +90,7 @@ C++
 
 **[Function]**
 ```
-I implement 4 different types of caches. There are designed with directed-mapped, 2-way set associative, 4-way set associative, and fully associative. After the design, I test the performance of different caches with a quick sort algorithm and a merge sort algorithm.
+I implement 4 different types of caches. There are designed with directed-mapped, 2-way set associative, 4-way set associative, and fully associative. After the design, I test the performance of different caches with a quick sort algorithm and a merge sort algorithm. Test bench is provided.
 ```
 
 ## Any suggestions or bugs found are welcomed.
