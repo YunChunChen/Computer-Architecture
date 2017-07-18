@@ -7,7 +7,6 @@ The programming language will mainly focus on `verilog`. However, `assembly code
 
 **[Description]** 
     
-    
 ```    
 Homework 1 aims at getting familiar with verilog and implementing some simple functions. 
 ```
@@ -15,7 +14,7 @@ Homework 1 aims at getting familiar with verilog and implementing some simple fu
 **[Language]**    
     
 ```
-Verilog.
+Verilog
 ```
 
 **[Function]**    
@@ -33,11 +32,6 @@ Verilog.
 ```
 
 
-
-
-
-
-
 ### **\<HW2\>**
 
 **[Description]** 
@@ -49,7 +43,7 @@ Homework 2 aims at a deeper insight of the operation of the assembly code.
 **[Language]**    
 
 ```
-Assembly code.
+Assembly
 ```
 
 **[Function]**    
@@ -58,11 +52,6 @@ Assembly code.
 I implement the bubble sort algorithm and quick sort algorithm that can take in any number of inputs with 
 assembly code. However, the constraint is that the compiling environment is under QtSpim compiler. 
 ```
-
-
-
-
-
 
 
 ### **\<HW3\>**
@@ -76,7 +65,7 @@ Homework 3 aims at the implementation of the single cycle MIPS.
 **[Language]**    
 
 ```
-Verilog.
+Verilog
 ```
 
 **[Function]**    
@@ -86,6 +75,22 @@ I implement the single cycle MIPS with verilog. For more details, please refer t
 ```
 
 
+### **\<HW4\>**
 
+**[Description]**
+
+```
+Homework 4 aims at implementing a cache with different way numbers.
+```
+
+**[Language]**
+```
+C++
+```
+
+**[Function]**
+```
+I implement 4 different types of caches. There are designed with directed-mapped, 2-way set associative, 4-way set associative, and fully associative. After the design, I test the performance of different caches with a quick sort algorithm and a merge sort algorithm.
+```
 
 ## Any suggestions or bugs found are welcomed.
