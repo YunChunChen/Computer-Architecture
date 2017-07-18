@@ -54,8 +54,9 @@ Assembly
 **[Function]**    
 
 ```
-I implement the bubble sort algorithm and quick sort algorithm that can take in any number of inputs with 
-assembly. However, the constraint is that the compiling environment must be under the QtSpim compiler. 
+I implement the bubble sort algorithm and quick sort algorithm that can take in 
+any number of inputs with assembly. However, the constraint is that the compiling 
+environment must be under the QtSpim compiler. 
 ```
 
 
@@ -103,7 +104,10 @@ C++
 
 **[Function]**
 ```
-I implement 4 different types of caches. There are designed with directed-mapped, 2-way set associative, 4-way set associative, and fully associative. After the design, I test the performance of different caches with a quick sort algorithm and a merge sort algorithm. Test bench is provided.
+I implement 4 different types of caches. There are designed with directed-mapped, 
+2-way set associative, 4-way set associative, and fully associative. 
+After the design, I test the performance of different caches with a quick sort algorithm 
+and a merge sort algorithm. Test bench is provided.
 ```
 
 ## Any suggestions or bugs found are welcomed.
