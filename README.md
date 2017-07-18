@@ -104,7 +104,7 @@ C++
 
 **[Function]**
 ```
-I implement 4 different types of caches. There are designed with directed-mapped, 
+I implement 4 different types of caches. There are designed with direct-mapped, 
 2-way set associative, 4-way set associative, and fully associative. 
 After the design, I test the performance of different caches with a quick sort algorithm 
 and a merge sort algorithm. Test bench is provided.
