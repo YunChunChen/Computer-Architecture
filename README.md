@@ -3,6 +3,9 @@
 
 The programming language will mainly focus on `verilog`. However, `assembly` and `C++` are also included in the homework assignments.
 
+
+
+
 ### **\<HW1\>**
 
 **[Description]** 
@@ -31,6 +34,9 @@ Verilog
 ```
 
 
+
+
+
 ### **\<HW2\>**
 
 **[Description]** 
@@ -53,6 +59,10 @@ assembly. However, the constraint is that the compiling environment must be unde
 ```
 
 
+
+
+
+
 ### **\<HW3\>**
 
 **[Description]** 
@@ -72,6 +82,10 @@ Verilog
 ```
 I implement the single cycle MIPS with verilog. For more details, please refer to the hw3 folder.
 ```
+
+
+
+
 
 
 ### **\<HW4\>**
